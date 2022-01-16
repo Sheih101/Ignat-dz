@@ -1,0 +1,48 @@
+.wrapper {
+    display: flex;
+    align-items: flex-end;
+    margin: 10px;
+    gap: 10px;
+}
+
+.bodyMessage {
+    background-color: #cccc66;
+    width: 360px;
+    border-radius: 15px 15px 15px 0;
+}
+
+.angle {
+    height:50px;
+    width:50px;
+    position:absolute;
+    overflow:hidden;
+    margin-left: 10px;
+}
+
+.angle:before {
+    content:'';
+    display:block;
+    height: 100%;
+    border-radius: 0 0 0 50%;
+    box-shadow: 0 0 0 50vw #cccc66;
+    transform: scale(-1, 1);
+}
+
+.image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.name {
+    margin: 10px 10px -7px 10px;
+}
+
+.message {
+    word-wrap: break-word;
+    margin: 10px 10px -10px 10px;
+}
+
+.time {
+    margin: 0 10px 0 315px;
+}

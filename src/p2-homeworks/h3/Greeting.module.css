@@ -1,0 +1,17 @@
+.someClass {
+    margin: 10px;
+}
+
+.error {
+    border: 1px solid red;
+}
+
+.errorMessage {
+    color: red;
+    display: block;
+    font-size: 15px;
+}
+
+.totalUsers {
+    margin: 10px;
+}
