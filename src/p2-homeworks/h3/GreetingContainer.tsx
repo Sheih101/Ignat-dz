@@ -30,6 +30,11 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         }
         setName('')
     }
+    const addUserKey = (e: number) => {
+        if (e === 13) {
+            addUser()
+        }
+    }
 
     const totalUsers = users.length // need to fix
 
@@ -39,6 +44,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
                 name={name}
                 setNameCallback={setNameCallback}
                 addUser={addUser}
+                addUserKey={addUserKey}
                 error={error}
                 totalUsers={totalUsers}
             />

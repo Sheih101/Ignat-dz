@@ -10,7 +10,7 @@ function HW4() {
 
     const showAlert = () => {
         if (error) {
-            alert('введите текст...')
+            alert('Введите текст...')
         } else {
             alert(text) // если нет ошибки показать текст
         }
