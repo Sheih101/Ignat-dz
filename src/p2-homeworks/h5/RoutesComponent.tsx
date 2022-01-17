@@ -1,9 +1,9 @@
 import React from 'react'
-import {Route, Routes, Navigate} from 'react-router-dom'
 import PreJunior from "./pages/PreJunior";
 import Error404 from "./pages/Error404";
 import Junior from "./pages/Junior";
 import JuniorPlus from "./pages/JuniorPlus";
+import {Navigate, Route, Routes} from "react-router-dom";
 
 export const PATH = {
     PRE_JUNIOR: '/pre-junior',
@@ -28,7 +28,7 @@ function RoutesComponent() {
                 {/*// add routes*/}
 
                 {/*у этого роута нет пути, он отрисуется если пользователь захочет попасть на несуществующую страницу*/}
-                <Route element={<Error404/>}/>
+                <Route path={'*'} element={<Error404/>}/>
 
             </Routes>
         </div>
