@@ -5,9 +5,8 @@ import RoutesComponent from './RoutesComponent'
 function HW5() {
     return (
         <div>
-                <Header/>
-
-                <RoutesComponent/>
+            <Header/>
+            <RoutesComponent/>
         </div>
     )
 }
