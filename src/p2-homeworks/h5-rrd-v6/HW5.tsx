@@ -6,7 +6,7 @@ import {HashRouter} from 'react-router-dom';
 function HW5() {
     return (
         <div>
-            <HashRouter basename={'Ignat-dz'}>
+            <HashRouter>
                 <Header/>
                 <Pages/>
             </HashRouter>
