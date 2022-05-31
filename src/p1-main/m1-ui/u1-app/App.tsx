@@ -5,7 +5,7 @@ import HW5 from '../../../p2-homeworks/h5-rrd-v6/HW5';
 export function App() {
     return (
         <div className={s.App}>
-            <div>react homeworks:</div>
+            <div>React homeworks:</div>
             <HW5/>
         </div>
     )

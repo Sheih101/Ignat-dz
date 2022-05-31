@@ -1,7 +1,23 @@
 .someClass {
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filterButtonsContainer {
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    width: 150px;
+    height: 30px;
 }
 
 .affair {
+    width: 300px;
     margin: 5px;
+    display: flex;
+    justify-content: space-between;
 }

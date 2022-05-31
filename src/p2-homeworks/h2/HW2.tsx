@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Affairs from './Affairs'
 
 // types
-export type AffairPriorityType = 'high' | 'middle' | 'low'
+export type AffairPriorityType = 'HIGH' | 'MIDDLE' | 'LOW'
 export type AffairType = {
     _id: number
     name: string
@@ -12,11 +12,11 @@ export type FilterType = 'all' | AffairPriorityType
 
 // constants
 const defaultAffairs: Array<AffairType> = [
-    {_id: 1, name: 'React', priority: 'high'},
-    {_id: 2, name: 'anime', priority: 'low'},
-    {_id: 3, name: 'games', priority: 'low'},
-    {_id: 4, name: 'work', priority: 'high'},
-    {_id: 5, name: 'html & css', priority: 'middle'},
+    {_id: 1, name: 'REACT', priority: 'HIGH'},
+    {_id: 2, name: 'ANIME', priority: 'LOW'},
+    {_id: 3, name: 'GAMES', priority: 'LOW'},
+    {_id: 4, name: 'WORK', priority: 'HIGH'},
+    {_id: 5, name: 'HTML & CSS', priority: 'MIDDLE'},
 ]
 
 // pure helper functions
@@ -41,18 +41,13 @@ function HW2() {
     return (
         <div>
             <hr/>
-            homeworks 2
-
-
+            Homeworks 2
             <Affairs
                 data={filteredAffairs}
                 setFilter={setFilter}
                 deleteAffairCallback={deleteAffairCallback}
             />
-
             <hr/>
-            {/*для личного творчества, могу проверить*/}
-            {/*<AlternativeAffairs/>*/}
             <hr/>
         </div>
     )

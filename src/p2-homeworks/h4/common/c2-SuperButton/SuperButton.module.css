@@ -2,14 +2,14 @@
     0% {
         left: -130%;
     }
-    100 % {
+    100% {
         left: 130%;
     }
 }
 
 .default {
     background: #121212;
-    color: #99ff99;
+    color: #69ff69;
     outline: none;
 }
 
