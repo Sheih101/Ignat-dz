@@ -6,7 +6,7 @@
 }
 
 .bodyMessage {
-    background-color: #69ff69;;
+    background-color: #ead896;;
     width: 360px;
     border-radius: 15px 15px 15px 0;
     color: black;
@@ -25,7 +25,7 @@
     display:block;
     height: 100%;
     border-radius: 0 0 0 50%;
-    box-shadow: 0 0 0 50vw #69ff69;
+    box-shadow: 0 0 0 50vw #ead896;
     transform: scale(-1, 1);
 }
 
