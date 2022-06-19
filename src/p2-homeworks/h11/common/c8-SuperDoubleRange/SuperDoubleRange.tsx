@@ -1,34 +1,61 @@
-import React from 'react';
-import {Box, Slider} from '@mui/material';
+import React from 'react'
+import 'rc-slider/assets/index.css'
 import s from './SuperDoubleRange.module.css'
+import Slider from 'rc-slider'
 
-export type SuperDoubleRangePropsType = {
-    value: number | number[]
-    onChangeDoubleRange: (newValue: number | number[]) => void
+
+type SuperDoubleRangePropsType = {
+    onChangeRange?: (value: number | number[]) => void
+    value: [number, number]
+    min?: number
+    max?: number
+    step?: number
+    disabled?: boolean
 }
 
-const SuperDoubleRange = (props: SuperDoubleRangePropsType) => {
+const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
+    {
+        onChangeRange, value,
+        min, max, step, disabled
+    }
+) => {
 
-    const onChangeHandler = ((event: Event, newValue: number | number[]) => {
-        props.onChangeDoubleRange(newValue)
+    const onChangeCallback = ((value: number | number[]) => {
+        onChangeRange && onChangeRange(value)
     })
 
     return (
-        <div>
-            <Box sx={{width: 300}}>
-                <Slider track={false}
-                        min={1}
-                        max={100}
-                        step={1}
-                        aria-label="Small"
-                        valueLabelDisplay="auto"
-                        className={s.range}
-                        value={props.value}
-                        onChange={onChangeHandler}
-                />
-            </Box>
-        </div>
-    );
-};
+        <>
+            <Slider
+                className={s.doubleRange}
+                range={true}
+                value={value}
+                min={min}
+                max={max}
+                step={step}
+                disabled={disabled}
+                onChange={onChangeCallback}
+                defaultValue={value}
+                allowCross={false}
+                trackStyle={{
+                    height: '7.5px',
+                    backgroundColor: '#69f03c'
+                }}
+                railStyle={{
+                    height: '7.5px',
+                    backgroundColor: '#69f03c'
+                }}
+                handleStyle={{
+                    backgroundColor: '#0075ff',
+                    border: 'none',
+                    opacity: '1',
+                    padding: '8px',
+                    height: '14.5px',
+                    width: '14.5px'
+                }}
+            />
+        </>
+    )
+}
 
-export default SuperDoubleRange;
+export default SuperDoubleRange

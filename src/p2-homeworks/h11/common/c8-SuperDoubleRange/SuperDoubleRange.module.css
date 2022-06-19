@@ -1,3 +1,9 @@
-.range {
+.container {
+display: flex;
+}
+
+.doubleRange {
+    display: inline-block;
+    margin: 10px;
     width: 300px;
 }

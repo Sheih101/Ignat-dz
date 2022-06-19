@@ -1,35 +1,48 @@
-import React from 'react';
-import {Box, Slider} from '@mui/material';
+import React from 'react'
+import 'rc-slider/assets/index.css'
 import s from './SuperRange.module.css'
+import Slider from 'rc-slider';
 
-export type SuperRangePropsType = {
-    value: number | number[]
-    onChangeRange: (newValue: number | number[]) => void
-}
 
-const SuperRange = (props: SuperRangePropsType) => {
-
-    const onChangeHandler = (event: Event, newValue: number | number[]) => {
-        props.onChangeRange(newValue)
-    }
-
-    return (
-        <div>
-            <Box sx={{width: 300}}>
-                <Slider defaultValue={1}
-                        min={1}
-                        max={100}
-                        step={1}
-                        track={false}
-                        aria-label="Small"
-                        className={s.range}
-                        valueLabelDisplay="auto"
-                        value={props.value}
-                        onChange={onChangeHandler}
-                />
-            </Box>
-        </div>
-    );
+type SuperRangePropsType = {
+    onChangeRange?: (value: number | number[]) => void
+    value: number
 };
 
-export default SuperRange;
+const SuperRange: React.FC<SuperRangePropsType> = (props) => {
+
+    const onChangeCallback = ((value: number | number[]) => {
+        props.onChangeRange && props.onChangeRange(value)
+    })
+
+    return (
+        <>
+            <Slider className={s.range}
+                    onChange={onChangeCallback}
+                    value={props.value}
+                    trackStyle={{
+                        height: '7.5px',
+                        backgroundColor: '#0075ff'
+                    }}
+                    railStyle={{height: '7.5px',}}
+                    handleStyle={{
+                        backgroundColor: '#0075ff',
+                        border: 'none',
+                        opacity: '1',
+                        padding: '8px',
+                        height: '14.5px',
+                        width: '14.5px'
+                    }}
+            />
+            {/* <input
+                type={'range'}
+                onChange={onChangeCallback}
+                className={finalRangeClassName}
+                value={restProps.value}
+                {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)
+            />*/}
+        </>
+    )
+}
+
+export default SuperRange
